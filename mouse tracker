@@ -1,0 +1,27 @@
+//way to track the mouse using html and js
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="practise.css">
+</head>
+<body>
+    
+    <div class="box"></div>
+    
+</body>
+<script src="practise.js"></script>
+</html>
+const box=document.querySelector('.box');
+const createContainer=document.createElement('p');
+createContainer.setAttribute('id','name');
+document.body.append(createContainer)
+// console.log(document.body.innerHTML)
+var logInfo=(event)=>{
+// var positions=event.offsetX;
+var positions=(`the offset positions are ${event.offsetX} and ${event.offsetY}`); 
+createContainer.innerText=positions;
+};
+document.body.addEventListener('mousemove',logInfo);
